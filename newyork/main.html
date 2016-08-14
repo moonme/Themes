@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- 
+    	Author: bymoon.me
+		PhotoCredit: Unknown. If you see this and want credit. Contact me.
+		
+		Framework by http://paunchev.net	
+												-->
+		
+	<meta charset="utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>{Title} {block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
+	{block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <link rel="shortcut icon" href="{Favicon}">
+	
+	<!--[if lt IE 9]>
+		<script src="http://static.tumblr.com/im2itiw/9Udlolced/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Javascript -->
+	<script type="text/javascript" src="http://static.tumblr.com/im2itiw/dB9ldskvh/youtube.js"></script><!-- Youtube white -->
+	{block:IfInfiniteScrolling}<script type="text/javascript" src="http://static.tumblr.com/q0etgkr/lPHlj76n8/infinitescrollingbycodysherman.js"></script>{/block:IfInfiniteScrolling}
+	
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" media="screen" href="http://static.tumblr.com/im2itiw/Fwtlpvs7u/newyork.css" />
+	{block:IfWhiteScrollbar}<link rel="stylesheet" type="text/css" media="screen" href="http://static.tumblr.com/im2itiw/Fzploirtv/scrollbar-white.css" />{/block:IfWhiteScrollbar}
+	<style type="text/css">
+	a:hover, h1 a:hover, .quote p:first-letter, #info, #nav a:hover, #photo-credit span, #info a:hover, #theme-credit  a:hover, .search_query {  color:{color:Theme}; }
+
+	{CustomCSS}</style>
+	
+	
+<meta name="if:Title" content="1"/>
+<meta name="if:Archive" content="0"/>
+<meta name="if:RSS" content="0"/>
+
+
+<meta name="color:Theme" content="#1AA9E5"/>
+<meta name="if:Search" content="0"/>
+<meta name="if:White Scrollbar" content="1"/>
+<meta name="if:Infinite Scrolling" content="0"/>
+</head>
+	  
+	  
+<body>	
+
+<!-- Content Here! -->
+<div id="container">
+{block:ifTitle}<a href="/" class="title">{Title}</a>{/block:ifTitle}
+
+{block:SearchPage}
+<div class="post">
+<h2>{lang:Search results for SearchQuery 2}.</h2>
+</div>
+{/block:SearchPage}
+
+
+
+
+
+<!-- Posts -->
+<section id="posts">
+{block:Posts}
+
+
+{block:Text}
+<article class="post">
+	<div id="info" >		
+	{DayOfMonth}.{MonthNumber}.{ShortYear} | {TimeAgo}<br />
+	<a href="{Permalink}">Permalink</a> | <a href="{ReblogURL}">Reblog</a>
+	</div>
+	
+	
+<figure class="text">
+{block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+{Body}
+</figure>
+	
+{block:Caption}<figcaption class="caption">{Caption}</figcaption>{/block:Caption}
+</article>
+{/block:Text}
+
+
+	{block:Photo}
+	<article class="post">
+	
+		<div class="photo_notes">
+		<a href="{PhotoURL-HighRes}">Hi-Res?</a><br />
+		{DayOfMonth}.{MonthNumber}.{ShortYear} | {TimeAgo}<br />
+		<a href="{Permalink}">Permalink</a> | <a href="{ReblogURL}">Reblog</a>
+		</div><!-- EndPhoto_notes -->
+	
+	
+	<figure class="photo">{LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}" />{LinkCloseTag}</figure>
+	
+			
+	{block:Caption}<figcaption class="caption-alt">{Caption}</figcaption>{/block:Caption}
+	</article>
+	{/block:Photo}
+	
+	
+	
+
+	
+	{block:Photoset}
+	<article class="post">
+		<div class="photo_notes">
+		{DayOfMonth}{MonthNumber}.{ShortYear} | {TimeAgo}<br />
+		<a href="{Permalink}">Permalink</a> | <a href="{ReblogURL}">Reblog</a>
+		</div><!-- EndPhoto_notes -->
+		
+	<figure class="photoset">
+	{Photoset-400}
+	</figure>
+
+	{block:Caption}<figcaption class="caption-alt">{Caption}</figcaption>{/block:Caption}
+	</article>
+	{/block:Photoset}
+	
+	
+	
+	
+
+{block:Quote}
+<article class="post">
+	<div id="info" >		
+	{DayOfMonth}.{MonthNumber}.{ShortYear} | {TimeAgo} <br />
+		<a href="{Permalink}">Permalink</a> | <a href="{ReblogURL}">Reblog</a>
+	</div>
+	
+<figure class="quote">
+<blockquote><p>{Quote}</p></blockquote>
+<p class="author">{block:Source} &nbsp; &mdash;  <b>{Source}</b>{/block:Source}</p>
+</figure>
+	
+</article>
+{/block:Quote}
+
+
+
+
+	{block:Link}
+	<article class="post">
+	
+	<div id="info" >		
+	{DayOfMonth}.{MonthNumber}.{ShortYear} | {TimeAgo}<br />
+	<a href="{Permalink}">Permalink</a> | <a href="{ReblogURL}">Reblog</a>
+	</div>
+	
+	<figure class="link">
+	<a href="{URL}"{Target}><h1>{Name}</h1></a>
+	</figure>
+			
+	{block:Description}<div class="caption">{Description}</div>{/block:Description}
+	</article>
+	{/block:Link}
+	
+	
+	
+	
+{block:Chat}
+<article class="post">
+	<div id="info" >		
+	{DayOfMonth}.{MonthNumber}.{ShortYear} | {TimeAgo}<br />
+	<a href="{Permalink}">Permalink</a> | <a href="{ReblogURL}">Reblog</a>
+	</div>
+	
+<figure class="chat">
+{block:Title}<h1><a href="{Permalink}" >{Title}</a></h1>{/block:Title}
+<ul>
+{block:Lines}
+<li class="{Alt}">{block:Label}<strong>{Label}</strong>{/block:Label} 	{Line}</li>
+{/block:Lines}
+</figure>		
+				
+	{block:Description}<div class="caption">{Description}</div>{/block:Description}
+
+</article>
+{/block:Chat}
+
+
+
+
+			
+				
+	{block:Video}
+	<article class="post ">
+		<div id="info" >		
+		{DayOfMonth}.{MonthNumber}.{ShortYear} | {TimeAgo}<br />
+		<a href="{Permalink}">Permalink</a> | <a href="{ReblogURL}">Reblog</a>
+		</div>
+	
+	{Video-400}
+		
+	{block:Description}<div class="caption-alt">{Description}</div>{/block:Description}
+
+	</article>
+	{/block:Video}
+	
+	
+	
+	
+		
+		
+{block:Audio}
+<article class="post">
+	<div id="info" >		
+	{DayOfMonth}.{MonthNumber}.{ShortYear} | {TimeAgo}<br />
+	<a href="{Permalink}">Permalink</a> | <a href="{ReblogURL}">Reblog</a>
+	</div>
+	
+<figure class="audio">
+{AudioPlayerWhite}
+</figure>
+						
+	{block:Description}<div class="caption">{Description}</div>{/block:Description}
+	
+</article>
+{/block:Audio}
+
+
+
+				
+								
+	{block:Answer}
+	<article class="post">
+	<figure class="answer">
+	<p class="thequestion">{Question}</p>
+	<p class="who"><img src="{AskerPortraitURL-24}" alt="Asker img" /></p>
+	{Answer}
+	</figure>
+	
+	</article>
+	{/block:Answer}
+	
+	
+	
+
+{block:PostNotes}
+{PostNotes}
+{/block:PostNotes}
+
+{/block:Posts}
+</section>
+
+<div id="theme-credit">
+Theme by <a href="http://Iammath.com/">Mathias Eriksson</a> | 
+Powered by <a href="http://www.tumblr.com"><b>Tumblr</b></a>. 
+</div>
+
+
+
+<div id="sidebar">
+
+{block:IfSearch}
+<form method="get" id="searchform" action="/search">
+<fieldset>
+<input type="text" name="q" value="type, hit enter" onfocus="if (this.value == 'type, hit enter') {this.value = '';}"
+	onblur="if (this.value == '') {this.value = 'type, hit enter';}" size="18" maxlength="50" />
+</fieldset>
+</form>
+{/block:IfSearch}
+
+<!-- About -->
+<div id="about">
+<a href="/"><img src="{PortraitURL-128}" alt="Profile Picture." /></a>
+{block:Description}<p>{Description}</p>{/block:Description}
+	 
+<ul id="menu"> 	 
+{block:AskEnabled}<a href="/ask"><li>{AskLabel}</li></a>{/block:AskEnabled}
+{block:IfArchive}<a href="/archive"><li> Archive</li></a>{/block:IfArchive}
+{block:ifRSS}<a href="{RSS}"><li>RSS</li></a>{/block:ifRSS}
+{block:SubmissionsEnabled}<a href="/submit"><li>Submit</li></a>{/block:SubmissionsEnabled}
+
+
+{block:HasPages} 
+{block:Pages}<a href="{URL}"><li> {Label}</li></a>{/block:Pages} 
+{/block:HasPages} 
+</ul>
+</div>
+</div><!-- EndSidebar -->
+
+{block:IfNotInfiniteScrolling}
+<!-- Nav -->
+<div id="nav">
+{block:Pagination}
+{block:NextPage}<a href="{NextPage}" class="previous">&rsaquo;</a>{/block:NextPage} 
+{block:PreviousPage}<a href="{PreviousPage}" class="next">&lsaquo;</a>{/block:PreviousPage}
+{/block:Pagination}
+</div>
+{/block:IfNotInfiniteScrolling}
+
+<div id="photo-credit">Credit Photo: <span>Unknown</span></div>
+</div><!-- EndContainer -->
+</body>
+</html>
