@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- 
+	Author: bymoon.me
+	-->	
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">            
+			<title>{Title}</title>
+			<meta charset="UTF-8">
+			<meta name="description" content="{MetaDescription}">
+			<link rel="alternate" type="application/rss+xml" href="{RSS}">
+			<link rel="shortcut icon" href="{Favicon}">
+			{block:Description} <meta name="description" content="{MetaDescription}" /> {/block:Description}
+			<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+			<script type="text/javascript" src="http://assets.tumblr.com/assets/scripts/tumblelog.js?_v=530b76c3ccad06e5b7d907a6c515b841"></script>
+			<meta http-equiv="x-dns-prefetch-control" content="off"/>
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js" type="text/javascript"></script>
+<script src="http://assets.bymathias.com/themes/assets/xtumblr.js" type="text/javascript"></script>
+
+			<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+			<link rel="stylesheet" type="text/css" media="screen" href="http://assets.bymathias.com/themes/xreborn.css" />
+				<style type="text/css""> 
+				<!-- Custom CSS -->
+				body { font-family:{text:Body Font}; color:{color:Body Fontcolor}; }
+				.text h1, .likes h1 { background-color:{color:Post TextH1};} 
+				.link h1{ background-color:{color:Post LinkH1}; }
+				.chat h1, .even{ background-color:{color:Post Chat}; }
+				.question h1, p.author { background-color:{color:Post QuestionH1}; }
+				
+				.post { width: {text:Postsize};}
+				#nav .fa, a.info:hover, a.scrollup:hover { color:{color:color}; }
+				blockquote,	q, ol.notes li.note blockquote, input[type=text]:focus, aside form:hover { border-color:{color:color};} 
+				#nav a:hover { background-color: {color:color};}
+				#top { background: url('{image:Backgroundimage}') no-repeat fixed 50%; }
+				
+				h1, h1.text, .question h1, aside a, .author, .quote blockquote{ font-family: 'Montserrat';}
+				.imgpost { margin-bottom: -5px; }
+				{CustomCSS}
+				</style>
+				
+				<!-- CUSTOM THEME DATA -->
+				<meta name="text:Postsize" content='700px'/>
+				<meta name="text:Montserrat" content='Montserrat'/>
+                <link href='http://fonts.googleapis.com/css?family={text:Montserrat}' rel='stylesheet' type='text/css'>
+				<meta name="text:Body Font" content='Open Sans'/>
+                <link href='http://fonts.googleapis.com/css?family={text:Body Font}' rel='stylesheet' type='text/css'>
+				<meta name="text:PagMarginTop" content='50' />
+				
+				<meta name="color:Body ahover" content="#AECEB6"/>
+				<meta name="color:Body Fontcolor" content='#333' />
+				<meta name="color:Post TextH1" content='#55C6C9' />
+				<meta name="color:Post LinkH1" content='#FF654A' />
+				<meta name="color:Post Chat" content='#FFC04A' />
+				<meta name="color:Post QuestionH1" content='#188081' />
+				<meta name="color:color" content='#FF954F' />
+				
+				
+				<meta name="image:Backgroundimage" content='http://assets.bymathias.com/themes/assets/xreborn.jpg' />
+				
+				<meta name="if:Archive" content="1"/>
+				<meta name="if:RSS" content="1"/>
+				<meta name="if:Mobile" content="1"/>
+				<meta name="if:Following" content="1"/>
+				<meta name="if:Infinite Scrolling" content="0"/>
+				<meta name="if:NavHeader" content="1"/>
+				<meta name="if:Aside" content="1"/>
+				<meta name="if:Credits" content="0"/>
+				<meta name="if:Tags" content="0"/>
+				<meta name="if:Source" content="1"/>
+				<meta name="if:Date" content="0"/>
+				<meta name="if:Time" content="1"/>
+				<meta name="if:Notes" content="1"/>
+				<meta name="if:Audioplayeralternative" content="1"/>
+				<meta name="if:Portrait" content="1">
+				<meta name="if:Search" content="1">
+				<meta name="if:Up" content="1">
+				<meta name="if:Gear" content="1">
+			
+			</head>
+	<body id="top">
+	
+			<header class="header">
+			<nav>  
+			<a href=""><i class="fa fa-tumblr "></i></a> <a href="/">{Title}</a>
+					
+			<!-- Tumblr Options -->
+			{block:ifNavHeader}
+			| {block:Pages}<a href="{URL}">{Label}</a>{/block:Pages}
+			{block:AskEnabled}<a href="/ask">{AskLabel}</a>{/block:AskEnabled}
+			{block:IfArchive}<a href="/archive">Archive</a>{/block:IfArchive}
+			{block:ifRSS}<a href="{RSS}">RSS</a>{/block:ifRSS}
+			{block:SubmissionsEnabled}<a href="/submit">Submit</a>{/block:SubmissionsEnabled}
+			{block:ifMobile}<a href="/mobile">{lang:Mobile}</a>{/block:ifMobile}
+			{/block:ifNavHeader}
+			</nav>
+			</header>
+			<!-- EndofHeader -->
+			
+	<!-- StartContent -->
+	<div id="content">
+		
+	{block:ifAside}
+<aside>
+{block:ifPortrait}
+<section id="portrait">
+<img src="{PortraitURL-128}" alt="" />
+</section>
+{/block:ifPortrait}
+
+<div class="inside">
+<section id="img"><h2><a href="/">{Title}</a></h2></section>
+<p>{Description}</p>
+
+{block:ifSearch}
+<form action="/search" method="get">
+    <input type="text" results="3" name="q" placeholder="Search.." onfocus="this.placeholder = ''" onblur="this.placeholder = '...?'" />
+</form>
+{/block:ifSearch}
+
+<ul>
+{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+{block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+{block:IfArchive}<li><a href="/archive">Archive</a></li>{/block:IfArchive}
+{block:ifRSS}<li><a href="{RSS}">RSS</a></li>{/block:ifRSS}
+{block:SubmissionsEnabled}<li><a href="/submit">Submit</a></li>{/block:SubmissionsEnabled}
+{block:ifMobile}<li><a href="/mobile">{lang:Mobile}</a></li>{/block:ifMobile}
+</ul>
+</div><!-- EndInside -->
+<div style="clear:both;"></div>
+
+
+
+<!-- Pagenation -->
+<div id="nav">
+{block:IfNotInfiniteScrolling}
+{block:Pagination} 
+{block:PreviousPage}<div class="left"><a href="{PreviousPage}"><i class="fa fa-hand-o-left"></i></a></div>{/block:PreviousPage}
+{block:NextPage}<div class="next right"><a href="{NextPage}"><i class="fa fa-hand-o-right"></i></a></div>{/block:NextPage}
+{/block:Pagination}
+{/block:IfNotInfiniteScrolling}
+</div>
+<div style="clear:both;"></div>
+
+
+
+
+{block:ifCredits}
+<div class="inside">
+<a href="">Theme</a> &amp; <a href="http://tumblr.com">Tumblr</a><br />
+</div><!-- EndInside -->
+{/block:ifCredits}
+
+{block:ifFollowing}
+<div class="inside">
+<a href="#" onClick="description(); return false;">Following</a> 
+<script type="text/javascript">
+//<![CDATA[  
+function description(){ $("#following").animate({"height": "toggle"}, { duration: 500 });    } 
+//]]>
+</script>
+
+<section id="following">
+{block:Following}
+    <ul>
+        {block:Followed}
+		<li><a href="{FollowedURL}">{FollowedName}</a></li>
+        {/block:Followed}
+    </ul>
+{/block:Following}
+</section>
+</div><!-- EndInside -->
+{/block:ifFollowing}
+	
+{/block:ifAside}
+</aside><!-- EndSide -->	
+		
+	
+	{block:Posts}
+	<div id="posts">
+			
+			{block:Text}
+			<article class="post"> 
+			<!-- Text --> 
+			<div class="text">
+			{block:Title}<header><h1><a href="{Permalink}">{Title}</a></h1></header>{/block:Title}
+			<div class="inside">
+
+			{Body}
+			</div><!-- endInside --> 
+			</div><!-- endText -->
+
+			<div class="timeandtags">
+			{block:ifTags}<span class="tag">{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}<br />{/block:HasTags}</span>{/block:ifTags}
+			{block:ifDate}{block:Date}{Month}, {DayOfMonthWithZero} at {12Hour}:{Minutes} {AmPm} {/block:Date} or{/block:ifDate} 			
+			{block:ifTime}{block:Date}{TimeAgo}{/block:Date}{/block:ifTime}
+			{block:ifNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:ifNotes}
+			{block:ifSource}{block:RebloggedFrom}~ <a href="{ReblogRootURL}">{ReblogRootName}</a> {/block:RebloggedFrom}{/block:ifSource}
+
+
+			<span class="right">
+			<span  class="like_and_reblog_buttons" style="display:block;width:20px;height:20px;"><a class="fa fa-bars" href="{Permalink}"></a></span>
+			<span class="like_and_reblog_buttons">{ReblogButton}</span>
+			<span class="like_and_reblog_buttons">{LikeButton}</span>
+			</span>
+			</footer><!-- endTimeandtags -->	
+			</article><!-- endPost -->
+			{/block:Text}
+
+			{block:Photo}
+			<article class="post"> 
+			<!-- Photo -->
+			<div class="photo">  
+			{LinkOpenTag}<a href="{Permalink}"><img src="{PhotoURL-1280}" alt="{PhotoAlt}" /></a>{LinkCloseTag}
+
+
+			 
+			{block:Caption}
+			<div class="inside caption"> 
+			{Caption}
+			</div><!-- endInside -->
+			{/block:Caption} 
+
+			
+			<div class="timeandtags">
+			{block:ifTags}<span class="tag">{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}<br />{/block:HasTags}</span>{/block:ifTags}
+			{block:ifDate}{block:Date}{Month}, {DayOfMonthWithZero} at {12Hour}:{Minutes} {AmPm} {/block:Date} or{/block:ifDate} 			
+			{block:ifTime}{block:Date}{TimeAgo}{/block:Date}{/block:ifTime}
+			{block:ifNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:ifNotes}
+			{block:ifSource}{block:RebloggedFrom}~ <a href="{ReblogRootURL}">{ReblogRootName}</a> {/block:RebloggedFrom}{/block:ifSource}
+
+
+			<span class="right">
+			<span  class="like_and_reblog_buttons" style="display:block;width:20px;height:20px;"><a class="fa fa-bars" href="{Permalink}"></a></span>
+			<span class="like_and_reblog_buttons">{ReblogButton}</span>
+			<span class="like_and_reblog_buttons">{LikeButton}</span>
+			</span>
+			</div><!-- endTimeandtags -->
+			</div><!-- endPhoto -->
+			</article><!-- endPost -->
+			{/block:Photo}
+
+
+
+
+			{block:Photoset} 
+			<article class="post"> 
+			<!-- Photoset -->			
+			<div class="photoset">
+			{Photoset}
+			</div>
+
+			{block:Caption}
+			<div class="inside caption"> 
+			{Caption}
+			</div><!-- endInside -->
+			{/block:Caption} 
+
+			<div class="timeandtags">
+			{block:ifTags}<span class="tag">{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}<br />{/block:HasTags}</span>{/block:ifTags}
+			{block:ifDate}{block:Date}{Month}, {DayOfMonthWithZero} at {12Hour}:{Minutes} {AmPm} {/block:Date} or{/block:ifDate} 			
+			{block:ifTime}{block:Date}{TimeAgo}{/block:Date}{/block:ifTime}
+			{block:ifNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:ifNotes}
+			{block:ifSource}{block:RebloggedFrom}~ <a href="{ReblogRootURL}">{ReblogRootName}</a> {/block:RebloggedFrom}{/block:ifSource}
+
+
+			<span class="right">
+			<span  class="like_and_reblog_buttons" style="display:block;width:20px;height:20px;"><a class="fa fa-bars" href="{Permalink}"></a></span>
+			<span class="like_and_reblog_buttons">{ReblogButton}</span>
+			<span class="like_and_reblog_buttons">{LikeButton}</span>
+			</span>
+			</div><!-- endTimeandtags -->
+			</article><!-- endPost -->	 
+			{/block:Photoset}
+
+			{block:Quote}
+			<article class="post"> 
+			<!-- Quote -->		
+			<div class="quote">
+			<div class="inside">
+			<blockquote>{Quote}</blockquote>
+
+			<div class="author source"> {source} </div>
+			</div><!-- endInside -->
+			</div><!-- endText -->  
+
+			<div class="timeandtags">
+			{block:ifTags}<span class="tag">{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}<br />{/block:HasTags}</span>{/block:ifTags}
+			{block:ifDate}{block:Date}{Month}, {DayOfMonthWithZero} at {12Hour}:{Minutes} {AmPm} {/block:Date} or{/block:ifDate} 			
+			{block:ifTime}{block:Date}{TimeAgo}{/block:Date}{/block:ifTime}
+			{block:ifNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:ifNotes}
+			{block:ifSource}{block:RebloggedFrom}~ <a href="{ReblogRootURL}">{ReblogRootName}</a> {/block:RebloggedFrom}{/block:ifSource}
+
+
+			<span class="right">
+			<span  class="like_and_reblog_buttons" style="display:block;width:20px;height:20px;"><a class="fa fa-bars" href="{Permalink}"></a></span>
+			<span class="like_and_reblog_buttons">{ReblogButton}</span>
+			<span class="like_and_reblog_buttons">{LikeButton}</span>
+			</span>
+			</div><!-- endTimeandtags -->
+			</article><!-- endPost -->
+			{/block:Quote} 
+
+			{block:Chat}
+			<article class="post"> 
+			<!-- Chat -->
+			<div class="chat">
+			{block:Title}<header><h1><a href="{Permalink}">{Title}</a></h1></header>{/block:Title}
+
+
+			<ul class="convo">
+			{block:Lines}
+			<li class="{Alt} user_{UserNumber}">
+			{block:Label}
+			<span class="label">{Label}</span>
+			{/block:Label}
+			{Line}
+			</li>
+			{/block:Lines}
+			</ul>
+			</div><!-- EndChat -->
+			
+			<div class="timeandtags">
+			{block:ifTags}<span class="tag">{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}<br />{/block:HasTags}</span>{/block:ifTags}
+			{block:ifDate}{block:Date}{Month}, {DayOfMonthWithZero} at {12Hour}:{Minutes} {AmPm} {/block:Date} or{/block:ifDate} 			
+			{block:ifTime}{block:Date}{TimeAgo}{/block:Date}{/block:ifTime}
+			{block:ifNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:ifNotes}
+			{block:ifSource}{block:RebloggedFrom}~ <a href="{ReblogRootURL}">{ReblogRootName}</a> {/block:RebloggedFrom}{/block:ifSource}
+
+
+			<span class="right">
+			<span  class="like_and_reblog_buttons" style="display:block;width:20px;height:20px;"><a class="fa fa-bars" href="{Permalink}"></a></span>
+			<span class="like_and_reblog_buttons">{ReblogButton}</span>
+			<span class="like_and_reblog_buttons">{LikeButton}</span>
+			</span>
+			</div><!-- endTimeandtags -->
+			</article><!-- endPost -->
+			{/block:Chat}
+
+			{block:Link}
+			<article class="post">
+			<!-- Link -->
+			<div class="link">
+			{block:Thumbnail}<img src="{Thumbnail-HighRes}" class="imgpost" alt="thumbimg"  /></style>{/block:Thumbnail}
+			<header><h1><a href="{URL}">{Name}</a></h1></header>
+			</div><!-- endText -->
+
+			<div class="inside">	
+			<div class="descriptions">{block:Description}{Description}{/block:Description}</div>
+			</div><!-- endInside -->
+			
+			
+			<div class="timeandtags">
+			{block:ifTags}<span class="tag">{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}<br />{/block:HasTags}</span>{/block:ifTags}
+			{block:ifDate}{block:Date}{Month}, {DayOfMonthWithZero} at {12Hour}:{Minutes} {AmPm} {/block:Date} or{/block:ifDate} 			
+			{block:ifTime}{block:Date}{TimeAgo}{/block:Date}{/block:ifTime}
+			{block:ifNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:ifNotes}
+			{block:ifSource}{block:RebloggedFrom}~ <a href="{ReblogRootURL}">{ReblogRootName}</a> {/block:RebloggedFrom}{/block:ifSource}
+
+
+			<span class="right">
+			<span  class="like_and_reblog_buttons" style="display:block;width:20px;height:20px;"><a class="fa fa-bars" href="{Permalink}"></a></span>
+			<span class="like_and_reblog_buttons">{ReblogButton}</span>
+			<span class="like_and_reblog_buttons">{LikeButton}</span>
+			</span>
+			</div><!-- endTimeandtags -->
+			</article><!-- endPost -->
+			{/block:Link}
+
+
+
+			{block:Video}
+			<article class="post">	
+			<!-- Video -->
+			<div class="video">
+			{VideoEmbed-700}
+			</div><!-- endVideo -->		
+					
+			{block:Caption}
+			<div class="inside caption"> 
+			{Caption}
+			</div><!-- endInside -->
+			{/block:Caption} 
+
+			<div class="timeandtags">
+			{block:ifTags}<span class="tag">{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}<br />{/block:HasTags}</span>{/block:ifTags}
+			{block:ifDate}{block:Date}{Month}, {DayOfMonthWithZero} at {12Hour}:{Minutes} {AmPm} {/block:Date} or{/block:ifDate} 			
+			{block:ifTime}{block:Date}{TimeAgo}{/block:Date}{/block:ifTime}
+			{block:ifNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:ifNotes}
+			{block:ifSource}{block:RebloggedFrom}~ <a href="{ReblogRootURL}">{ReblogRootName}</a> {/block:RebloggedFrom}{/block:ifSource}
+
+
+			<span class="right">
+			<span  class="like_and_reblog_buttons" style="display:block;width:20px;height:20px;"><a class="fa fa-bars" href="{Permalink}"></a></span>
+			<span class="like_and_reblog_buttons">{ReblogButton}</span>
+			<span class="like_and_reblog_buttons">{LikeButton}</span>
+			</span>
+			</div><!-- endTimeandtags -->
+			</article><!-- endPost -->
+			{/block:Video}
+
+
+
+				
+			{block:Audio}
+			<article class="post">
+			<!-- Audio -->
+			<div class="audio">
+			{block:AudioEmbed} {AudioEmbed-640} {/block:AudioEmbed}
+
+			{block:Caption}
+			<div class="inside caption"> 
+			{Caption}
+			</div><!-- endInside -->
+			{/block:Caption} 
+			
+			<span style="display:none;">{block:ContentSource}<a href="{SourceURL}">Via {SourceTitle}</a>{/block:ContentSource}</span> 
+			</div><!-- endAudio -->
+
+
+			<div class="timeandtags">
+			{block:ifTags}<span class="tag">{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}<br />{/block:HasTags}</span>{/block:ifTags}
+			{block:ifDate}{block:Date}{Month}, {DayOfMonthWithZero} at {12Hour}:{Minutes} {AmPm} {/block:Date} or{/block:ifDate} 			
+			{block:ifTime}{block:Date}{TimeAgo}{/block:Date}{/block:ifTime}
+			{block:ifNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:ifNotes}
+			{block:ifSource}{block:RebloggedFrom}~ <a href="{ReblogRootURL}">{ReblogRootName}</a> {/block:RebloggedFrom}{/block:ifSource}
+
+
+			<span class="right">
+			<span  class="like_and_reblog_buttons" style="display:block;width:20px;height:20px;"><a class="fa fa-bars" href="{Permalink}"></a></span>
+			<span class="like_and_reblog_buttons">{ReblogButton}</span>
+			<span class="like_and_reblog_buttons">{LikeButton}</span>
+			</span>
+			</div><!-- endTimeandtags -->
+			</article><!-- endPost -->
+			{/block:Audio}    
+
+			{block:Answer}
+			<article class="post">	
+			<!-- Answer -->
+			<div class="question">
+			<h1><p>{Question}</p></h1><p class="author">&mdash; {Asker}</p>
+			</div>
+			<div class="answer">
+			{Answer}
+			</div>
+
+			<div class="timeandtags">
+			{block:ifTags}<span class="tag">{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}<br />{/block:HasTags}</span>{/block:ifTags}
+			{block:ifDate}{block:Date}{Month}, {DayOfMonthWithZero} at {12Hour}:{Minutes} {AmPm} {/block:Date} or{/block:ifDate} 			
+			{block:ifTime}{block:Date}{TimeAgo}{/block:Date}{/block:ifTime}
+			{block:ifNotes}{block:NoteCount}with {NoteCountWithLabel}{/block:NoteCount}{/block:ifNotes}
+			{block:ifSource}{block:RebloggedFrom}~ <a href="{ReblogRootURL}">{ReblogRootName}</a> {/block:RebloggedFrom}{/block:ifSource}
+
+
+			<span class="right">
+			<span  class="like_and_reblog_buttons" style="display:block;width:20px;height:20px;"><a class="fa fa-bars" href="{Permalink}"></a></span>
+			<span class="like_and_reblog_buttons">{ReblogButton}</span>
+			<span class="like_and_reblog_buttons">{LikeButton}</span>
+			</span>
+			</div><!-- endTimeandtags -->
+			</article>
+			{/block:Answer}	
+
+			{block:PostNotes}
+			<!-- 'Notes' -->
+			<article id="notes" class="post">
+			<div class="viewnotes">View Notes</div>
+			<div class="postnotes">
+			<div class="inside">
+			{PostNotes}
+			</div>
+			</div>
+			{/block:PostNotes}
+			</article>
+			
+			
+	</div><!-- EndPosts-->
+	{/block:Posts}
+	<div style="clear:both;"></div>
+	</div>
+	<!-- EndContent -->
+	
+	
+<!-- 
+{block:NoRebloggedFrom}{block:RebloggedFrom}{ReblogParentName}{/block:RebloggedFrom}{/block:NoRebloggedFrom}
+{block:ContentSource}{SourceURL}
+{block:SourceLogo}<img src="{BlackLogoURL}"width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo}
+{/block:ContentSource}
+-->
+		
+
+
+<!-- Fumctions|Extra -->
+{block:ifGear}<a href="https://www.tumblr.com/customize/loveunitymoon?redirect_to=http%3A%2F%2Floveunitymoon.tumblr.com%2F" class="info"><i class="fa fa-gear"></i></a>{/block:ifGear}
+{block:ifUp}<a href="#" class="scrollup"><i class="fa fa-hand-o-up"></i></a>{/block:ifUp}
+			
+<script><!-- Javascript -->
+(function($) {	
+	$.lockfixed("#nav",{offset: {top: {text:PagMarginTop}, bottom: 620}});
+	$('#nav').css('background-color', 'transparent')
+         <!-- .css('opacity', 0.5);  undesirable opacity changes to div's content -->
+})(jQuery);	
+</script>
+<div style="clear:both;"></div>
+</body>	
+</html>
