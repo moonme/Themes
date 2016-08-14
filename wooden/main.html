@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
+<link rel="shortcut icon" href="{Favicon}" />
+<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="description" content="{MetaDescription}" />
+<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/im2itiw/3Gflm4qh4/bppong.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/im2itiw/dB9ldskvh/youtube.js"></script>
+
+ <!-- 
+	Author: bymoon.me
+	-->	
+
+<!-- css -->
+<link rel="stylesheet" type="text/css" media="screen" href="http://static.tumblr.com/im2itiw/rMClmhn4p/blackwood.css" />
+<style type="text/css"> {CustomCSS} </style>
+
+
+    
+  
+  <meta name="if:Show Description" content="1"/>
+  <meta name="if:Show people I follow" content="1"/>
+  <meta name="text:Disqus Shortname" content="" />
+  <meta name="text:Google Analytics ID" content="1" />
+</head>
+  
+  
+  
+<body>
+<!-- Posts begin -->
+<div id="wrapper">
+
+
+
+<div id="me">
+<div class="profile">
+<a href="/"><img src="{PortraitURL-128}" alt="" /></a>
+</div><!-- EndProfile -->
+
+{block:IfShowDescription}
+<div id="info">
+<p class="bubble right">
+{Description}
+</p>
+</div><!-- EndInfo1 -->
+{/block:IfShowDescription}
+
+{block:Likes} {Likes limit="2"} {/block:Likes}
+</div><!-- End Id Me -->
+
+
+
+<!-- --Posts -->
+<ol id="posts">
+{block:Posts}
+
+
+
+	{block:Text} 
+	<div class="entry">
+	<div class="textpost">
+	<h1>{Title}</h1>
+	{Body}
+	</div><!-- EndTextPost -->
+	 
+	 
+	 
+	<div class="hover2">
+	<span class="bubble left">
+	{block:Caption} {Caption}{/block:Caption}
+	<a href="{Permalink}">Permalink</a> &nbsp;
+	{block:RebloggedFrom}><a href="{ReblogParentURL}" >{ReblogParentName}</a>{/block:RebloggedFrom}
+	{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags} {/block:HasTags} &nbsp;
+	<a href="{Permalink}#notes">{NoteCount} Notes</a>
+	</span>
+	</div><!-- EndHover -->
+	<br class="clear" />
+	</div><!-- EndEntry -->
+	{/block:Text}
+	
+	
+	{block:Photo}
+	<div class="entry">
+	<div class="photopost">
+	<a href="{Permalink}"><img src="{PhotoURL-400}" class="photopost" alt="{PhotoAlt}" /></a> 
+	</div><!-- EndPhotoPost -->
+	 
+	 
+	
+	<div class="hover2">
+	<span class="bubble left">
+	{block:Caption} {Caption}{/block:Caption}
+	<a href="{Permalink}">Permalink</a> &nbsp;
+	{block:RebloggedFrom}><a href="{ReblogParentURL}" >{ReblogParentName}</a>{/block:RebloggedFrom}
+	{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags} {/block:HasTags} &nbsp;
+	<a href="{Permalink}#notes">{NoteCount} Notes</a>
+	</span>
+	</div><!-- EndHover -->
+	<br class="clear" />
+	</div><!-- EndEntry -->
+	{/block:Photo} 
+
+
+	{block:Photoset} 
+	
+	<div class="entry">
+	<div class="photosetpost">
+	{LinkOpenTag}{Photoset-400}{LinkCloseTag}	
+	</div><!-- EndPhotoSetPost -->
+	
+	
+	
+	<div class="hover2">
+	<span class="bubble left">
+	{block:Caption} {Caption}{/block:Caption}
+	<a href="{Permalink}">Permalink</a> &nbsp;
+	{block:RebloggedFrom}><a href="{ReblogParentURL}" >{ReblogParentName}</a>{/block:RebloggedFrom}
+	{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags} {/block:HasTags} &nbsp;
+	<a href="{Permalink}#notes">{NoteCount} Notes</a>
+	</span>
+	</div><!-- EndHover -->
+	<br class="clear" />
+	</div><!-- EndEntry -->
+	{/block:Photoset} 
+	
+	
+	{block:Quote}
+	<div class="entry">
+	<div class="quotepost">
+	<blockquote> <p>{Quote} </p>  </blockquote>
+	<p class="author">{block:Source} &nbsp; &mdash;  <b>{Source}</b>{/block:Source}</p>
+	</div><!-- EndTextPost -->
+	
+	
+	<div class="hover2">
+	<span class="bubble left">
+	{block:Caption} {Caption}{/block:Caption}
+	<a href="{Permalink}">Permalink</a> &nbsp;
+	{block:RebloggedFrom}><a href="{ReblogParentURL}" >{ReblogParentName}</a>{/block:RebloggedFrom}
+	{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags} {/block:HasTags} &nbsp;
+	<a href="{Permalink}#notes">{NoteCount} Notes</a>
+	</span>
+	</div><!-- EndHover -->
+	<br class="clear" />
+	</div><!-- EndEntry -->		
+	{/block:Quote} 	
+	
+	
+
+			
+	{block:Chat}		
+	<div class="entry">
+	<div class="chatpost">
+	{block:Title}<h2><a href="{Permalink}" >{Title}</a></h2>{/block:Title}
+	<ul>
+	{block:Lines}
+	<li>{block:Label}<strong  class="{Alt}">{Label}</strong>{/block:Label} 	{Line}</li>
+	{/block:Lines}
+	</div><!-- EndChatPost -->
+	
+	
+	<div class="hover2">
+	<span class="bubble left">
+	{block:Caption} {Caption}{/block:Caption}
+	<a href="{Permalink}">Permalink</a> &nbsp;
+	{block:RebloggedFrom}><a href="{ReblogParentURL}" >{ReblogParentName}</a>{/block:RebloggedFrom}
+	{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags} {/block:HasTags} &nbsp;
+	<a href="{Permalink}#notes">{NoteCount} Notes</a>
+	</span>
+	</div><!-- EndHover -->
+	<br class="clear" />
+	</div><!-- EndEntry -->	
+	{/block:Chat} 
+	
+
+			
+	{block:Link}
+	<div class="entry">
+	<div class="linkpost">
+	<a href="{Permalink}"> {Name}</a> <br />
+	</div><!-- EndTextPost -->
+	
+	
+	<div class="hover2">
+	<span class="bubble left">
+	{block:Caption} {Caption}{/block:Caption}
+	<a href="{Permalink}">Permalink</a> &nbsp;
+	{block:RebloggedFrom}><a href="{ReblogParentURL}" >{ReblogParentName}</a>{/block:RebloggedFrom}
+	{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags} {/block:HasTags} &nbsp;
+	<a href="{Permalink}#notes">{NoteCount} Notes</a>
+	</span>
+	</div><!-- EndHover -->
+	<br class="clear" />
+	</div><!-- EndEntry -->
+	{/block:Link}
+	
+	
+	{block:Video}
+	<div class="entry">
+	<div class="videopost">
+	{Video-400}	
+	</div><!-- EndVideoPost -->
+	
+
+	<div class="hover2">
+	<span class="bubble left">
+	{block:Caption} {Caption}{/block:Caption}
+	<a href="{Permalink}">Permalink</a> &nbsp;
+	{block:RebloggedFrom}><a href="{ReblogParentURL}" >{ReblogParentName}</a>{/block:RebloggedFrom}
+	{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags} {/block:HasTags} &nbsp;
+	<a href="{Permalink}#notes">{NoteCount} Notes</a>
+	</span>
+	</div><!-- EndHover -->
+	<br class="clear" />
+	</div><!-- EndEntry -->
+	 {/block:Video}
+
+	
+	{block:Audio}	
+	<div class="entry">
+	
+	<div class="audiopost">
+	{AudioPlayerGrey}
+	</div><!-- EndTextPost -->
+	 
+	 
+	<div class="hover2">
+	<span class="bubble left">
+	{block:Caption} {Caption}{/block:Caption}
+	<a href="{Permalink}">Permalink</a> &nbsp;
+	{block:RebloggedFrom}><a href="{ReblogParentURL}" >{ReblogParentName}</a>{/block:RebloggedFrom}
+	{block:HasTags}{block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags} {/block:HasTags} &nbsp;
+	<a href="{Permalink}#notes">{NoteCount} Notes</a>
+	</span>
+	</div><!-- EndHover -->
+	<br class="clear" />
+	</div><!-- EndEntry -->
+	{/block:Audio}
+		
+			
+		
+		{block:PostNotes}
+		<div class="entry">
+		<ol class="notes">{PostNotes}</ol>
+		</div><!-- EndPost -->
+		{/block:PostNotes}
+
+
+{/block:Posts}<!-- EndPosts -->
+</ol>
+
+<div id="footer">
+<div id="copyright">
+Powered by <a href="http://www.tumblr.com"><b>Tumblr</b></a>. | 
+{block:PreviousPage} <a href="{PreviousPage}" class="next">&larr;</a>{/block:PreviousPage}
+{CurrentPage} of {TotalPages} 
+{block:NextPage}<a href="{NextPage}" class="previous">&rarr;</a>{/block:NextPage}  
+
+{/block:IfshowpeopleIfollow}
+<div id="following">
+{block:Following}
+    <ul>
+        {block:Followed}
+            <li>
+                <a href="{FollowedURL}"><img src="{FollowedPortraitURL-48}"/></a>
+            </li>
+        {/block:Followed}
+    </ul>
+{/block:Following}
+</div>
+{/block:IfshowpeopleIfollow}
+
+</div><!-- End Copyright -->
+</div><!-- EndFooter -->
+</div><!-- End wrapper -->
+
+
+</body>
+</html>
